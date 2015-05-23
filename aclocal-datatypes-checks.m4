@@ -1,2 +1,0 @@
-AC_DEFUN([DATATYPES_CHECKS], [{
-}])
