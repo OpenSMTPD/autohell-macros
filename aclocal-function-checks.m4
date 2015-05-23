@@ -59,4 +59,3 @@ AC_CHECK_FUNCS([ \
 		[AC_DEFINE([HAVE_CLOCK_GETTIME], [1], [Have clock_gettime])])
 
 }])
-
