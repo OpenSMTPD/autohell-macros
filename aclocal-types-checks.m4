@@ -118,6 +118,41 @@ AC_DEFUN([CHECK_SOCKET_TYPES], [{
 	#endif
 	])
 
+	AC_CHECK_TYPES([struct ifgroupreq])
+
+	AC_CHECK_MEMBERS([struct sockaddr.sa_len], , , [
+	#include <netdb.h>
+	#include <netinet/in.h>
+	#include <sys/socket.h>
+	])
+
+	AC_CHECK_MEMBERS([struct sockaddr_storage.ss_len], , , [
+	#ifdef HAVE_SYS_SOCKET_H
+	#include <sys/socket.h>
+	#endif
+	#ifdef HAVE_NETINET_IN_H
+	#include <netinet/in.h>
+	#endif
+	])
+
+	AC_CHECK_MEMBERS([struct sockaddr_in.sin_len], , , [
+	#ifdef HAVE_SYS_SOCKET_H
+	#include <sys/socket.h>
+	#endif
+	#ifdef HAVE_NETINET_IN_H
+	#include <netinet/in.h>
+	#endif
+	])
+
+	AC_CHECK_MEMBERS([struct sockaddr_in6.sin6_len], , , [
+	#ifdef HAVE_SYS_SOCKET_H
+	#include <sys/socket.h>
+	#endif
+	#ifdef HAVE_NETINET_IN_H
+	#include <netinet/in.h>
+	#endif
+	])
+
 }])
 
 AC_DEFUN([CHECK_RESOLVER_TYPES], [{
