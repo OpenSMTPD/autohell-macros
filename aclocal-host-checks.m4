@@ -1,4 +1,4 @@
-AC_DEFUN([HOST_CHECKS], [{
+AC_DEFUN([CHECK_HOST], [{
 case "$host" in
 *-*-darwin*)
 	AC_DEFINE([SPT_TYPE], [SPT_REUSEARGV],
