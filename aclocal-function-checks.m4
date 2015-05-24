@@ -12,7 +12,6 @@ AC_DEFUN([CHECK_SYSTEM_FUNCTIONS], [{
 		__b64_pton \
 		bcopy \
 		chflags \
-		clock_gettime \
 		closefrom \
 		daemon \
 		dirfd \
@@ -74,4 +73,14 @@ AC_DEFUN([CHECK_STRING_FUNCTIONS], [{
 
 AC_DEFUN([CHECK_TIME_FUNCTIONS], [{
 	AC_CHECK_FUNCS([gettimeofday])
+
+	AC_CHECK_FUNCS([clock_gettime])
+	if test x"$ac_cv_func_clock_gettime" = x"no"; then
+		AC_CHECK_LIB([rt], [clock_gettime], [], [], [])
+		if test x"$ac_cv_lib_rt_clock_gettime" = x"yes"; then
+			AC_DEFINE([HAVE_CLOCK_GETTIME], [1],
+				[Define to 1 if you have the `clock_gettime' function.])
+			LDFLAGS="${LDFLAGS} -lrt"
+		fi
+	fi
 }])
