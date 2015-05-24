@@ -60,4 +60,4 @@ AC_DEFUN([CHECK_STRING_FUNCTIONS], [{
 	AC_CHECK_FUNCS([strsep])
 	AC_CHECK_FUNCS([strlcat])
 	AC_CHECK_FUNCS([strlcpy])
-})
+}])
