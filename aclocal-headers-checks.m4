@@ -6,6 +6,8 @@ AC_DEFUN([CHECK_SYSTEM_HEADERS], [{
 	AC_CHECK_HEADERS([sys/ndir.h])
 	AC_CHECK_HEADERS([sys/dir.h])
 
+	AC_CHECK_HEADERS([mach/mach_time.h])
+
 	AC_CHECK_HEADERS([dirent.h])
 	AC_CHECK_HEADERS([limits.h])
 	AC_CHECK_HEADERS([ndir.h])
