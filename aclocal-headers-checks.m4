@@ -3,8 +3,12 @@ AC_DEFUN([CHECK_SYSTEM_HEADERS], [{
 	AC_CHECK_HEADERS([sys/types.h])
 	AC_CHECK_HEADERS([sys/param.h])
 	AC_CHECK_HEADERS([sys/time.h])
+	AC_CHECK_HEADERS([sys/ndir.h])
+	AC_CHECK_HEADERS([sys/dir.h])
 
+	AC_CHECK_HEADERS([dirent.h])
 	AC_CHECK_HEADERS([limits.h])
+	AC_CHECK_HEADERS([ndir.h])
 	AC_CHECK_HEADERS([signal.h])
 	AC_CHECK_HEADERS([string.h])
 
