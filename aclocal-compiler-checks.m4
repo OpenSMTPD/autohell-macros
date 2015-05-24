@@ -146,10 +146,12 @@ if test "$GCC" = "yes" || test "$GCC" = "egcs"; then
 	CHECK_COMPILER_CFLAG([-Wunused-result], [-Wno-unused-result])
 	CHECK_COMPILER_CFLAG([-fno-strict-aliasing])
 	CHECK_COMPILER_CFLAG([-D_FORTIFY_SOURCE=2])
+	CHECK_COMPILER_CFLAG([-fPIE])
     if test "x$use_toolchain_hardening" = "x1"; then
 	CHECK_COMPILER_LDFLAG_LINK([-Wl,-z,relro])
 	CHECK_COMPILER_LDFLAG_LINK([-Wl,-z,now])
 	CHECK_COMPILER_LDFLAG_LINK([-Wl,-z,noexecstack])
+	CHECK_COMPILER_LDFLAG_LINK([-pie])
 	# NB. -ftrapv expects certain support functions to be present in
 	# the compiler library (libgcc or similar) to detect integer operations
 	# that can overflow. We must check that the result of enabling it
