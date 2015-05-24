@@ -37,6 +37,20 @@ AC_DEFUN([CHECK_SYSTEM_TYPES], [{
 	#endif
 	])
 
+	AC_CHECK_MEMBERS([struct stat.st_flags], , , [
+	#include <sys/types.h>
+	#include <sys/stat.h>
+	])
+
+	AC_CHECK_MEMBERS([struct stat.st_mtim], , , [
+	#include <sys/types.h>
+	#include <sys/stat.h>
+	])
+
+	AC_CHECK_MEMBERS([struct stat.st_mtimespec], , , [
+	#include <sys/types.h>
+	#include <sys/stat.h>
+	])
 
 	AC_CHECK_TYPES(sig_atomic_t, [], [], [
 	#ifdef HAVE_SYS_TYPES_H
