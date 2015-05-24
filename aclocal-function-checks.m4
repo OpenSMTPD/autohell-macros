@@ -53,7 +53,7 @@ AC_DEFUN([CHECK_SYSTEM_FUNCTIONS], [{
 		vasprintf \
 		vsnprintf \
 		waitpid
-
+	])
 	AC_SEARCH_LIBS([clock_gettime], [rt],
 		[AC_DEFINE([HAVE_CLOCK_GETTIME], [1], [Have clock_gettime])])
 }])
