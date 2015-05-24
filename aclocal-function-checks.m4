@@ -43,10 +43,8 @@ AC_DEFUN([CHECK_SYSTEM_FUNCTIONS], [{
 		socketpair \
 		strdup \
 		strerror \
-		strlcat \
-		strlcpy \
-		strnvis \
 		strmode \
+		strnvis \
 		strtonum \
 		sysconf \
 		tcgetpgrp \
@@ -55,4 +53,11 @@ AC_DEFUN([CHECK_SYSTEM_FUNCTIONS], [{
 		vsnprintf \
 		waitpid
 	])
+	CHECK_STRING_FUNCTIONS
 }])
+
+AC_DEFUN([CHECK_STRING_FUNCTIONS], [{
+	AC_CHECK_FUNCS([strsep])
+	AC_CHECK_FUNCS([strlcat])
+	AC_CHECK_FUNCS([strlcpy])
+})
