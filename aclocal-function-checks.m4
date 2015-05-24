@@ -80,7 +80,6 @@ AC_DEFUN([CHECK_TIME_FUNCTIONS], [{
 		if test x"$ac_cv_lib_rt_clock_gettime" = x"yes"; then
 			AC_DEFINE([HAVE_CLOCK_GETTIME], [1],
 				[Define to 1 if you have the `clock_gettime' function.])
-			LDFLAGS="${LDFLAGS} -lrt"
 		fi
 	fi
 }])
