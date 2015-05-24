@@ -11,6 +11,7 @@ AC_DEFUN([CHECK_SYSTEM_FUNCTIONS], [{
 		__b64_pton \
 		bcopy \
 		chflags \
+		clock_gettime \
 		closefrom \
 		dirfd \
 		dirname \
@@ -54,6 +55,4 @@ AC_DEFUN([CHECK_SYSTEM_FUNCTIONS], [{
 		vsnprintf \
 		waitpid
 	])
-	AC_SEARCH_LIBS([clock_gettime], [rt],
-		[AC_DEFINE([HAVE_CLOCK_GETTIME], [1], [Have clock_gettime])])
 }])
