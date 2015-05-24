@@ -4,8 +4,9 @@ AC_DEFUN([CHECK_SYSTEM_HEADERS], [{
 	AC_CHECK_HEADERS([sys/param.h])
 	AC_CHECK_HEADERS([sys/time.h])
 
-	AC_CHECK_HEADERS([signal.h])
 	AC_CHECK_HEADERS([limits.h])
+	AC_CHECK_HEADERS([signal.h])
+	AC_CHECK_HEADERS([string.h])
 
 }])
 
