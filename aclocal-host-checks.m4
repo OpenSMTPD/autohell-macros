@@ -1,9 +1,6 @@
 AC_DEFUN([HOST_CHECKS], [{
 case "$host" in
 *-*-darwin*)
-	AC_DEFINE([BROKEN_SETEUID])
-	AC_DEFINE([BROKEN_SETREUID])
-	AC_DEFINE([BROKEN_SETREGID])
 	AC_DEFINE([SPT_TYPE], [SPT_REUSEARGV],
 		[Define to a Set Process Title type if your system is supported by bsd-setproctitle.c])
 	;;
